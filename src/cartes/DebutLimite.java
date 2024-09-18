@@ -6,6 +6,6 @@ public class DebutLimite extends Limite {
 	}
 	@Override
 	public String toString() {
-		return super.toString()+"debut limite a 50";
+		return "debut limite a 50";
 	}
 }

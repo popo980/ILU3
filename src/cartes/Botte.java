@@ -8,6 +8,6 @@ public class Botte extends Probleme {
 	
 	@Override
 	public String toString() {
-		return super.toString()+getType().botte();
+		return getType().botte();
 	}
 }

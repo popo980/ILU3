@@ -6,6 +6,6 @@ public class FinLimite extends Limite {
 	}
 	@Override
 	public String toString() {
-		return super.toString()+"Fin limite a 50";
+		return "Fin limite a 50";
 	}
 }
