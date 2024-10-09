@@ -3,6 +3,7 @@ package cartes;
 public class JeuDeCartes {
 	
 	private Configuration[] jeu = new Configuration[19];
+	private int nbCartes;
 
 	public JeuDeCartes() {
 		jeu[0] = new Configuration(new Borne(25),10);
@@ -38,6 +39,17 @@ public class JeuDeCartes {
 		return rslt.toString();
 	}
 	
+	public Carte[] donnerCartes() {
+		Carte[] packet = new Carte[106];
+		nbCartes=0;
+		
+		for (int i=0; i<jeu.length;i++) {
+			packet = jeu[i].ajoutCarte(packet);
+		}
+		
+		return packet;
+	}
+	
 	private class Configuration{
 		private int nbExemplaires;
 		private Carte carte;
@@ -50,8 +62,17 @@ public class JeuDeCartes {
 		public Carte getCarte() {
 			return carte;
 		}
+		
 		public int getNbExemplaires() {
 			return nbExemplaires;
+		}
+		
+		public Carte[] ajoutCarte(Carte[] cartes) {
+			for (int i =0;i<nbExemplaires;i++) {
+				cartes[nbCartes] = this.carte;
+				nbCartes++;
+			}
+			return cartes;
 		}
 	}
 }

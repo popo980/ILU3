@@ -9,5 +9,12 @@ public class Attaque extends Bataille {
 	public String toString() {
 		return getType().attaque();
 	}
+	
+	public boolean equals(Object obj) {
+		if(obj instanceof Attaque att) {
+			return att.getType()==this.getType();
+		}
+		return false;
+	}
 
 }
